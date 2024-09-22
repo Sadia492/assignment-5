@@ -30,7 +30,9 @@
         theme: {
           extend: {
             colors: {
-              clifford: "#da373d",
+              primary: "#B4F461",
+              secondary: "#F9F7F3",
+              accent: "#111111",
             },
             fontFamily: {
               Lexend: "Lexend",
@@ -42,9 +44,34 @@
   </head>
   <body>
     <!-- header section starts here -->
-    <header></header>
+
+    <header class="bg-secondary py-6 sticky top-0">
+      <nav class="w-4/5 mx-auto flex justify-between items-center">
+        <div>
+          <button
+            class="py-3 px-8 bg-primary font-Lexend font-semibold text-xl rounded-lg"
+          >
+            Blog
+          </button>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12"><img src="assets/logo.png" alt="" /></div>
+          <h2 class="font-Lexend font-semibold text-xl">Donate Bangladesh</h2>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7"><img src="assets/coin.png" alt="" /></div>
+          <h5 class="flex text-accent/70 font-medium text-xl">
+            <span>5500</span>&nbsp;BDT
+          </h5>
+        </div>
+      </nav>
+    </header>
     <!-- header section ends here -->
-    <main></main>
+    <main>
+      <!-- noakhali section starts here-->
+      <section></section>
+      <!-- noakhali section ends here-->
+    </main>
     <!-- footer section starts here -->
     <footer></footer>
     <!-- footer section ends here -->
