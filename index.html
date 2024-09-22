@@ -45,44 +45,49 @@
   <body>
     <!-- header section starts here -->
 
-    <header class="bg-secondary py-6 sticky top-0">
-      <nav class="w-4/5 mx-auto flex justify-between items-center">
-        <div>
-          <button
-            class="py-3 px-8 bg-primary font-Lexend font-semibold text-xl rounded-lg"
-          >
-            Blog
-          </button>
-        </div>
-        <div class="flex items-center gap-4">
-          <div class="w-12 h-12"><img src="assets/logo.png" alt="" /></div>
-          <h2 class="font-Lexend font-semibold text-xl">Donate Bangladesh</h2>
-        </div>
-        <div class="flex items-center gap-3">
-          <div class="w-7 h-7"><img src="assets/coin.png" alt="" /></div>
-          <h5 class="flex text-accent/70 font-medium text-xl">
-            <span>5500</span>&nbsp;BDT
-          </h5>
-        </div>
-      </nav>
+    <header class="sticky top-0">
+      <div class="bg-secondary py-6">
+        <nav class="w-4/5 mx-auto flex justify-between items-center">
+          <div>
+            <button
+              class="py-3 px-8 bg-primary font-Lexend font-semibold text-xl rounded-lg"
+            >
+              Blog
+            </button>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12"><img src="assets/logo.png" alt="" /></div>
+            <h2 class="font-Lexend font-semibold text-xl">Donate Bangladesh</h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-7 h-7"><img src="assets/coin.png" alt="" /></div>
+            <h5 class="flex text-accent/70 font-medium text-xl">
+              <span>5500</span>&nbsp;BDT
+            </h5>
+          </div>
+        </nav>
+      </div>
+      <div
+        class="flex justify-center items-center gap-4 py-4 backdrop-blur-3xl"
+      >
+        <button
+          class="bg-primary rounded-lg text-xl font-semibold font-Lexend py-4 px-8"
+        >
+          Donation
+        </button>
+        <button
+          class="rounded-lg text-xl font-semibold font-Lexend py-4 px-8 border-2 text-accent/30"
+        >
+          History
+        </button>
+      </div>
     </header>
     <!-- header section ends here -->
     <main>
       <!-- noakhali section starts here-->
-      <section class="w-4/5 mx-auto mt-20">
+      <section class="w-4/5 mx-auto mt-8">
         <!-- tabs navigation -->
-        <div class="flex justify-center items-center gap-4 mb-8">
-          <button
-            class="bg-primary rounded-lg text-xl font-semibold font-Lexend py-4 px-8"
-          >
-            Donation
-          </button>
-          <button
-            class="rounded-lg text-xl font-semibold font-Lexend py-4 px-8 border-2 text-accent/30"
-          >
-            History
-          </button>
-        </div>
+
         <!--donation section  -->
         <div class="flex items-center gap-8 p-8 border-2 rounded-2xl">
           <div class="flex-1 w-full">
@@ -211,6 +216,18 @@
         </div>
       </section>
       <!-- quota movement section ends here -->
+
+      <!-- history section -->
+      <section class="w-4/5 mx-auto hidden space-y-6">
+        <div class="border-2 p-8 rounded-2xl">
+          <h4 class="font-bold text-xl font-Lexend text-accent mb-4">
+            96500 Taka is Donated for famine-2024 at Feni, Bangladesh
+          </h4>
+          <p class="font-light text-accent/70">
+            Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)
+          </p>
+        </div>
+      </section>
     </main>
     <!-- footer section starts here -->
     <footer class="bg-secondary py-16"></footer>

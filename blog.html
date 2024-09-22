@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM-Quest-Build-and-Manipulate</title>
+    <!-- google font cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome cdn -->
+    <script
+      src="https://kit.fontawesome.com/08421737f0.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- tailwind cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind configuration -->
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#B4F461",
+              secondary: "#F9F7F3",
+              accent: "#111111",
+            },
+            fontFamily: {
+              Lexend: "Lexend",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- header section starts here -->
+    <header class="sticky top-0">
+      <div class="bg-secondary py-6">
+        <nav class="w-4/5 mx-auto flex justify-between items-center">
+          <div>
+            <button
+              class="py-3 px-8 bg-primary font-Lexend font-semibold text-xl rounded-lg"
+            >
+              Home
+            </button>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12"><img src="assets/logo.png" alt="" /></div>
+            <h2 class="font-Lexend font-semibold text-xl">Donate Bangladesh</h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-7 h-7"><img src="assets/coin.png" alt="" /></div>
+            <h5 class="flex text-accent/70 font-medium text-xl">
+              <span>5500</span>&nbsp;BDT
+            </h5>
+          </div>
+        </nav>
+      </div>
+      <div
+        class="flex justify-center items-center gap-4 py-4 backdrop-blur-3xl"
+      >
+        <button
+          class="bg-primary rounded-lg text-xl font-semibold font-Lexend py-4 px-8"
+        >
+          Donation
+        </button>
+        <button
+          class="rounded-lg text-xl font-semibold font-Lexend py-4 px-8 border-2 text-accent/30"
+        >
+          History
+        </button>
+      </div>
+    </header>
+    <!-- header section ends here -->
+
+    <main class="w-4/5 mx-auto mt-8">
+      <section>
+        <h2 class="font-bold text-4xl mb-10">My Important FAQ</h2>
+
+        <div class="border-2 py-8 px-4 rounded-3xl">
+          <div class="flex justify-between text-2xl font-semibold">
+            <h2>What is the Document Object Model (DOM)?</h2>
+            <button><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <h4 class="text-xl font-medium mt-4 hidden">
+            Document Object Model which is usually referred as DOM shows a
+            webpage as a tree of objects. We can easily get the control of the
+            objects using JavaScript and modify each HTML element. DOM usually
+            thought to be as a bridge between HTML and JavaScript which gives
+            the access for the modification purpose. So that we can change
+            styles remove or add elements and modify the text of the elements.
+            In short, DOM is the representation of a tree-like object which
+            allows JavaScript to dynamically interact.
+          </h4>
+        </div>
+        <div class="border-2 py-8 px-4 rounded-3xl">
+          <div class="flex justify-between text-2xl font-semibold">
+            <h2>How do you select an element from the DOM?</h2>
+            <button><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <h4 class="text-xl font-medium mt-4 hidden">
+            There are several methods to select an element from the DOM. Some of
+            them are used to select a single element and some are used to select
+            multiple elements together. getElementById() and querySelector()
+            methods are used for selecting single element whereas
+            getElementByClassName(), getElementByTagName(), querySelectorAll()
+            are used for selecting multiple elements. Therefore, we select
+            single elements from multiple selecting methods by looping them.
+          </h4>
+        </div>
+        <div class="border-2 py-8 px-4 rounded-3xl">
+          <div class="flex justify-between text-2xl font-semibold">
+            <h2>
+              What is event delegation in the context of the DOM, and why is it
+              useful?
+            </h2>
+            <button><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <h4 class="text-xl font-medium mt-4 hidden">
+            Event delegation is a useful technique where event listener is not
+            added to the child elements but added to their parents for handling
+            the child events. This is useful because it develops the performance
+            by reducing the number of event listener and specially useful
+            dealing with dynamic content where child elements are added or
+            removed.
+          </h4>
+        </div>
+        <div class="border-2 py-8 px-4 rounded-3xl">
+          <div class="flex justify-between text-2xl font-semibold">
+            <h2>
+              How do you manipulate an element's attributes and styles using the
+              DOM?
+            </h2>
+            <button><i class="fa-solid fa-chevron-down"></i></button>
+          </div>
+          <h4 class="text-xl font-medium mt-4 hidden">
+            Using the DOM, we can easily manipulate an element's attributes or
+            styles. To modify attribute we can use setAttribute() or
+            removeAttribute() method. For manipulating style we can use style
+            method; as example element.style.color='red', here we are changing
+            the text color to red. Again, we can use classList.add() or
+            className methods for adding css classes manually for manipulating
+            style.
+          </h4>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
