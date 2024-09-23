@@ -20,9 +20,9 @@ function includeInHistory(inputValue, heading) {
   div.className = "border-2 p-8 rounded-2xl";
   div.innerHTML = `
      <h4 class="font-bold text-xl font-Lexend text-accent mb-4">
-            ${inputValue} Taka is Donated for ${heading.innerText}
+            ${inputValue.toFixed(2)} Taka is Donated for ${heading.innerText}
           </h4>
-          <p class="font-light text-accent/70">
+          <p class="font-light font-Lexend text-accent/70">
            Date: ${new Date().toString()}
           </p>
     
