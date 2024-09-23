@@ -11,6 +11,8 @@ const quotaSection = document.getElementById("quota-section");
 const historySection = document.getElementById("history-section");
 const footerSection = document.getElementById("footer-section");
 const noakhaliHeading = document.getElementById("noakhali-heading");
+const feniHeading = document.getElementById("feni-heading");
+const quotaHeading = document.getElementById("quota-heading");
 
 // blog page and home page connecting to each other
 
@@ -28,7 +30,9 @@ let quotaAmountNumber = getInnerTextIntoNumById("quota-amount");
 document.getElementById("noakhali-btn").addEventListener("click", function () {
   const noakhaliInputValue = getInputValueById("noakhali-input");
   if (isNaN(noakhaliInputValue) || noakhaliInputValue <= 0) {
-    return alert("invalid input value");
+    alert("invalid input value");
+    document.getElementById("noakhali-input").value = "";
+    return;
   } else {
     if (mainBalanceNumber < noakhaliInputValue) {
       return alert("not enough balance");
@@ -40,6 +44,23 @@ document.getElementById("noakhali-btn").addEventListener("click", function () {
 
     mainBalance.innerText = mainBalanceNumber;
     document.getElementById("my_modal_1").showModal();
+    document.getElementById("noakhali-input").value = "";
+
+    const noakhaliDiv = document.createElement("div");
+    noakhaliDiv.className = "border-2 p-8 rounded-2xl";
+    noakhaliDiv.innerHTML = `
+     <h4 class="font-bold text-xl font-Lexend text-accent mb-4">
+            ${noakhaliInputValue} Taka is Donated for ${
+      noakhaliHeading.innerText
+    }
+          </h4>
+          <p class="font-light text-accent/70">
+            ${new Date().toString()}
+          </p>
+    
+    `;
+
+    historySection.appendChild(noakhaliDiv);
   }
 });
 
@@ -47,7 +68,9 @@ document.getElementById("noakhali-btn").addEventListener("click", function () {
 document.getElementById("feni-btn").addEventListener("click", function () {
   const feniInputValue = getInputValueById("feni-input");
   if (isNaN(feniInputValue) || feniInputValue <= 0) {
-    return alert("invalid input value");
+    alert("invalid input value");
+    document.getElementById("feni-input").value = "";
+    return;
   } else {
     if (mainBalanceNumber < feniInputValue) {
       return alert("not enough balance");
@@ -59,6 +82,21 @@ document.getElementById("feni-btn").addEventListener("click", function () {
     feniAmount.innerText = feniAmountNumber;
     mainBalance.innerText = mainBalanceNumber;
     document.getElementById("my_modal_2").showModal();
+    document.getElementById("feni-input").value = "";
+
+    const feniDiv = document.createElement("div");
+    feniDiv.className = "border-2 p-8 rounded-2xl";
+    feniDiv.innerHTML = `
+     <h4 class="font-bold text-xl font-Lexend text-accent mb-4">
+            ${feniInputValue} Taka is Donated for ${feniHeading.innerText}
+          </h4>
+          <p class="font-light text-accent/70">
+            ${new Date().toString()}
+          </p>
+    
+    `;
+
+    historySection.appendChild(feniDiv);
   }
 });
 
@@ -82,6 +120,20 @@ document.getElementById("quota-btn").addEventListener("click", function () {
 
     document.getElementById("my_modal_3").showModal();
     document.getElementById("quota-input").value = "";
+
+    const quotaDiv = document.createElement("div");
+    quotaDiv.className = "border-2 p-8 rounded-2xl";
+    quotaDiv.innerHTML = `
+     <h4 class="font-bold text-xl font-Lexend text-accent mb-4">
+            ${quotaInputValue} Taka is Donated for ${quotaHeading.innerText}
+          </h4>
+          <p class="font-light text-accent/70">
+            ${new Date().toString()}
+          </p>
+    
+    `;
+
+    historySection.appendChild(quotaDiv);
   }
 });
 
