@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,8 +44,8 @@
   </head>
   <body>
     <!-- header section starts here -->
-    <header class="sticky top-0">
-      <div class="bg-secondary py-6">
+    <header class="sticky top-0 w-full bg-opacity-100 z-10 backdrop-blur-lg">
+      <div class="py-6 bg-secondary/70">
         <nav class="w-4/5 mx-auto flex justify-between items-center">
           <div>
             <button
@@ -57,7 +57,9 @@
           </div>
           <div class="flex items-center gap-4">
             <div class="w-12 h-12"><img src="assets/logo.png" alt="" /></div>
-            <h2 class="font-Lexend font-semibold text-xl">Donate Bangladesh</h2>
+            <h2 class="font-Lexend hidden md:block font-semibold text-xl">
+              Donate Bangladesh
+            </h2>
           </div>
           <div class="flex items-center gap-3">
             <div class="w-7 h-7"><img src="assets/coin.png" alt="" /></div>
@@ -67,20 +69,6 @@
           </div>
         </nav>
       </div>
-      <div
-        class="flex justify-center items-center gap-4 py-4 backdrop-blur-3xl"
-      >
-        <button
-          class="bg-primary rounded-lg text-xl font-semibold font-Lexend py-4 px-8"
-        >
-          Donation
-        </button>
-        <button
-          class="rounded-lg text-xl font-semibold font-Lexend py-4 px-8 border-2 text-accent/30"
-        >
-          History
-        </button>
-      </div>
     </header>
     <!-- header section ends here -->
 
@@ -88,7 +76,7 @@
       <section>
         <h2 class="font-bold text-4xl mb-10">My Important FAQ</h2>
 
-        <div class="collapse collapse-arrow border-2">
+        <div class="collapse collapse-arrow p-8 border-2 bg-white">
           <input type="radio" name="my-accordion-2" checked="checked" />
           <div class="collapse-title text-3xl font-semibold">
             What is the Document Object Model (DOM)?
@@ -96,17 +84,18 @@
           <div class="collapse-content">
             <p class="font-medium text-xl">
               Document Object Model which is usually referred as DOM shows a
-              webpage as a tree of objects. We can easily get the control of the
-              objects using JavaScript and modify each Html element. DOM usually
-              thought to be as a bridge between HTML and JavaScript which gives
-              the access for the modification purpose. So that we can change
-              styles remove or add elements and modify the text of the elements.
-              In short, DOM is the representation of a tree like object which
-              allows JavaScript to dynamically interact.
+              webpage structure as a tree of objects. We can easily get the
+              control of the objects using JavaScript and modify each Html
+              element. DOM usually thought to be as a bridge between HTML and
+              JavaScript which allows developers to control and modify HTML
+              elements dynamically. So that we can change styles, remove or add
+              elements and modify the text of the elements. In short, DOM is the
+              representation of a tree like object which allows JavaScript to
+              dynamically make webpages interactive.
             </p>
           </div>
         </div>
-        <div class="collapse collapse-arrow border-2">
+        <div class="collapse collapse-arrow p-8 border-2 bg-white">
           <input type="radio" name="my-accordion-2" />
           <div class="collapse-title text-3xl font-semibold">
             How do you select an element from the DOM?
@@ -118,13 +107,14 @@
               select multiple elements together. getElementById() and
               querySelector() methods are used for selecting single element
               whereas getElementByClassName() , getElementByTagName() and
-              querySelectorAll() are used for selecting multiple elements.
-              Therefore we can select single element from multiple selecting
-              methods by looping them.
+              querySelectorAll() are used for selecting multiple elements. But
+              The most commonly used method is getElementById(), which selects
+              an element by its unique id Therefore we can select single element
+              from multiple selecting methods by looping them.
             </p>
           </div>
         </div>
-        <div class="collapse collapse-arrow border-2">
+        <div class="collapse collapse-arrow p-8 border-2 bg-white">
           <input type="radio" name="my-accordion-2" />
           <div class="collapse-title text-3xl font-semibold">
             What is event delegation in the context of the DOM, and why is it
@@ -132,16 +122,17 @@
           </div>
           <div class="collapse-content">
             <p class="font-medium text-xl">
-              Event delegation is a useful technique where event listener is not
-              added to the child element but added to their parents for handling
-              the child events. It is useful because it develops the performance
-              by reducing the number of event listener and specially useful
+              Event delegation is a useful technique where event listener is
+              added to parent instead of the child element for handling the
+              child events. It is useful because it develops the performance by
+              reducing the number of event listener and specially useful for
               dealing with dynamic content where child elements are added or
-              removed.
+              removed. It simplifies the code maintenance and make the code more
+              logical for other developers to understand.
             </p>
           </div>
         </div>
-        <div class="collapse collapse-arrow border-2">
+        <div class="collapse collapse-arrow p-8 border-2 bg-white">
           <input type="radio" name="my-accordion-2" />
           <div class="collapse-title text-3xl font-semibold">
             How do you manipulate an element's attributes and styles using the
@@ -153,9 +144,9 @@
               styles. In order to modify attribute, we can use setAttribute() or
               removeAttribute() method. For manipulating style we can use style
               method. As example, element.style.color = 'red', here we are
-              changing the text color to red. Again, we can add classList.add()
-              or className methods for adding CSS classes manually for
-              manipulating style.
+              changing the text color to red. Additionally, we can use classList
+              to add or remove classes, and className to set or update all the
+              classes manually for manipulating style.
             </p>
           </div>
         </div>

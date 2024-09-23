@@ -5,14 +5,11 @@ const feniAmount = document.getElementById("feni-amount");
 const quotaAmount = document.getElementById("quota-amount");
 const historyTab = document.getElementById("history-tab");
 const donationTab = document.getElementById("donation-tab");
-const noakhaliSection = document.getElementById("noakhali-section");
-const feniSection = document.getElementById("feni-section");
-const quotaSection = document.getElementById("quota-section");
 const historySection = document.getElementById("history-section");
-const footerSection = document.getElementById("footer-section");
 const noakhaliHeading = document.getElementById("noakhali-heading");
 const feniHeading = document.getElementById("feni-heading");
 const quotaHeading = document.getElementById("quota-heading");
+const mainSection = document.getElementById("main-section");
 
 // blog page and home page connecting to each other
 
@@ -30,37 +27,23 @@ let quotaAmountNumber = getInnerTextIntoNumById("quota-amount");
 document.getElementById("noakhali-btn").addEventListener("click", function () {
   const noakhaliInputValue = getInputValueById("noakhali-input");
   if (isNaN(noakhaliInputValue) || noakhaliInputValue <= 0) {
-    alert("invalid input value");
+    alert("Invalid Donation amount");
     document.getElementById("noakhali-input").value = "";
     return;
   } else {
     if (mainBalanceNumber < noakhaliInputValue) {
-      return alert("not enough balance");
+      return alert("Not enough balance");
     }
-    noakhaliAmountNumber = noakhaliAmountNumber + noakhaliInputValue;
-    mainBalanceNumber = mainBalanceNumber - noakhaliInputValue;
+    noakhaliAmountNumber += noakhaliInputValue;
+    mainBalanceNumber -= noakhaliInputValue;
 
-    noakhaliAmount.innerText = noakhaliAmountNumber;
+    noakhaliAmount.innerText = noakhaliAmountNumber.toFixed(2);
+    mainBalance.innerText = mainBalanceNumber.toFixed(2);
 
-    mainBalance.innerText = mainBalanceNumber;
     document.getElementById("my_modal_1").showModal();
     document.getElementById("noakhali-input").value = "";
 
-    const noakhaliDiv = document.createElement("div");
-    noakhaliDiv.className = "border-2 p-8 rounded-2xl";
-    noakhaliDiv.innerHTML = `
-     <h4 class="font-bold text-xl font-Lexend text-accent mb-4">
-            ${noakhaliInputValue} Taka is Donated for ${
-      noakhaliHeading.innerText
-    }
-          </h4>
-          <p class="font-light text-accent/70">
-            ${new Date().toString()}
-          </p>
-    
-    `;
-
-    historySection.appendChild(noakhaliDiv);
+    includeInHistory(noakhaliInputValue, noakhaliHeading);
   }
 });
 
@@ -68,7 +51,7 @@ document.getElementById("noakhali-btn").addEventListener("click", function () {
 document.getElementById("feni-btn").addEventListener("click", function () {
   const feniInputValue = getInputValueById("feni-input");
   if (isNaN(feniInputValue) || feniInputValue <= 0) {
-    alert("invalid input value");
+    alert("Invalid Donation amount");
     document.getElementById("feni-input").value = "";
     return;
   } else {
@@ -79,24 +62,12 @@ document.getElementById("feni-btn").addEventListener("click", function () {
     feniAmountNumber += feniInputValue;
     mainBalanceNumber -= feniInputValue;
 
-    feniAmount.innerText = feniAmountNumber;
-    mainBalance.innerText = mainBalanceNumber;
+    feniAmount.innerText = feniAmountNumber.toFixed(2);
+    mainBalance.innerText = mainBalanceNumber.toFixed(2);
     document.getElementById("my_modal_2").showModal();
     document.getElementById("feni-input").value = "";
 
-    const feniDiv = document.createElement("div");
-    feniDiv.className = "border-2 p-8 rounded-2xl";
-    feniDiv.innerHTML = `
-     <h4 class="font-bold text-xl font-Lexend text-accent mb-4">
-            ${feniInputValue} Taka is Donated for ${feniHeading.innerText}
-          </h4>
-          <p class="font-light text-accent/70">
-            ${new Date().toString()}
-          </p>
-    
-    `;
-
-    historySection.appendChild(feniDiv);
+    includeInHistory(feniInputValue, feniHeading);
   }
 });
 
@@ -105,7 +76,7 @@ document.getElementById("quota-btn").addEventListener("click", function () {
   const quotaInputValue = getInputValueById("quota-input");
   //   const quotaInputValueNumber = Number(quotaInputValue);
   if (isNaN(quotaInputValue) || quotaInputValue <= 0) {
-    alert("invalid input value");
+    alert("Invalid Donation amount");
     document.getElementById("quota-input").value = "";
     return;
   } else {
@@ -115,57 +86,23 @@ document.getElementById("quota-btn").addEventListener("click", function () {
     quotaAmountNumber += quotaInputValue;
     mainBalanceNumber -= quotaInputValue;
 
-    quotaAmount.innerText = quotaAmountNumber;
-    mainBalance.innerText = mainBalanceNumber;
+    quotaAmount.innerText = quotaAmountNumber.toFixed(2);
+    mainBalance.innerText = mainBalanceNumber.toFixed(2);
 
     document.getElementById("my_modal_3").showModal();
     document.getElementById("quota-input").value = "";
 
-    const quotaDiv = document.createElement("div");
-    quotaDiv.className = "border-2 p-8 rounded-2xl";
-    quotaDiv.innerHTML = `
-     <h4 class="font-bold text-xl font-Lexend text-accent mb-4">
-            ${quotaInputValue} Taka is Donated for ${quotaHeading.innerText}
-          </h4>
-          <p class="font-light text-accent/70">
-            ${new Date().toString()}
-          </p>
-    
-    `;
-
-    historySection.appendChild(quotaDiv);
+    includeInHistory(quotaInputValue, quotaHeading);
   }
 });
 
 // historyTab events
 historyTab.addEventListener("click", function () {
-  historyTab.classList.add("bg-primary");
-  historyTab.classList.add("text-black");
-  donationTab.classList.remove("bg-primary");
-  donationTab.classList.remove("text-black");
-  donationTab.classList.add("border-2");
-  donationTab.classList.add("text-accent/50");
-
-  noakhaliSection.classList.add("hidden");
-  feniSection.classList.add("hidden");
-  quotaSection.classList.add("hidden");
-  //   footerSection.classList.add("hidden");
-
-  historySection.classList.remove("hidden");
+  tabClass(historyTab, donationTab);
+  hideSection(historySection);
 });
-
+// donation tab events
 donationTab.addEventListener("click", function () {
-  donationTab.classList.add("bg-primary");
-  donationTab.classList.add("text-black");
-  historyTab.classList.remove("text-black");
-  historyTab.classList.remove("bg-primary");
-  historyTab.classList.add("border-2");
-  historyTab.classList.add("text-accent/50");
-
-  noakhaliSection.classList.remove("hidden");
-  feniSection.classList.remove("hidden");
-  quotaSection.classList.remove("hidden");
-  footerSection.classList.remove("hidden");
-
-  historySection.classList.add("hidden");
+  tabClass(donationTab, historyTab);
+  hideSection(mainSection);
 });
