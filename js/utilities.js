@@ -23,7 +23,7 @@ function includeInHistory(inputValue, heading) {
             ${inputValue.toFixed(2)} Taka is Donated for ${heading.innerText}
           </h4>
           <p class="font-light font-Lexend text-accent/70">
-           Date: ${new Date().toString()}
+            Date: ${new Date().toString()}
           </p>
     
     `;
