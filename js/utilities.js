@@ -5,6 +5,7 @@ function getInputValueById(id) {
   const inputNumber = Number(inputValue);
   return inputNumber;
 }
+// function 2
 
 function getInnerTextIntoNumById(id) {
   const text = document.getElementById(id).innerText;

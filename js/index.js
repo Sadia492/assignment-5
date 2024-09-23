@@ -149,7 +149,7 @@ historyTab.addEventListener("click", function () {
   noakhaliSection.classList.add("hidden");
   feniSection.classList.add("hidden");
   quotaSection.classList.add("hidden");
-  footerSection.classList.add("hidden");
+  //   footerSection.classList.add("hidden");
 
   historySection.classList.remove("hidden");
 });
